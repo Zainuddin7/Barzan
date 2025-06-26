@@ -107,27 +107,33 @@ user_problem_statement: "Build a general love proposal template web page with ro
 backend:
   - task: "Create proposal API endpoints"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Implemented FastAPI backend with MongoDB integration. Created endpoints for creating proposals, responding to proposals, and checking proposal status. Uses UUID for proposal IDs and handles proposal responses (yes/no)."
+      - working: true
+        agent: "testing"
+        comment: "Successfully tested all proposal API endpoints. The POST /api/proposals endpoint correctly creates proposals with all required fields and returns a valid proposal_id. The GET /api/proposals/{proposal_id} endpoint correctly retrieves proposal data. The POST /api/proposals/{proposal_id}/respond endpoint properly handles both 'yes' and 'no' responses. The GET /api/proposals/{proposal_id}/status endpoint correctly returns the proposal status and response details. Error handling for non-existent proposals and missing fields works as expected."
 
   - task: "MongoDB integration for proposals"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Set up MongoDB collections for proposals and responses. Using environment variable MONGO_URL for database connection."
+      - working: true
+        agent: "testing"
+        comment: "MongoDB integration is working correctly. The application successfully connects to MongoDB, creates and retrieves documents from the proposals_collection and responses_collection. Data persistence is confirmed as proposals and responses are correctly stored and retrieved across multiple API calls."
 
 frontend:
   - task: "Romantic proposal page UI"
