@@ -180,8 +180,6 @@ metadata:
 
 test_plan:
   current_focus:
-    - "Create proposal API endpoints"
-    - "MongoDB integration for proposals"
     - "Romantic proposal page UI"
     - "Proposal response functionality"
   stuck_tasks: []
